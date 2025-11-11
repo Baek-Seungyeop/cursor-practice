@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파닥몬의 사진첩</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <header>
+        <h1>파닥몬의 사진첩</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link" class="nav-link active">홈</a></li>
+                <li><a href="#" id="view-link" class="nav-link">보기</a></li>
+                <li><a href="#" id="list-link" class="nav-link">목록</a></li>
+            </ul>
+        </nav>
+        <div class="controls">
+            <button id="dark-mode-btn" class="control-btn">🌙 다크모드</button>
+            <button id="font-size-btn" class="control-btn">🔤 폰트 크기</button>
+            <button id="load-dummy-btn" class="control-btn">📸 더미 데이터 로드</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 홈 화면: 일기 작성 폼 -->
+        <section id="home-section" class="section active">
+            <div class="container">
+                <h2>새 일기 작성</h2>
+                <form id="diary-form">
+                    <div class="form-group">
+                        <label for="diary-title">제목</label>
+                        <input type="text" id="diary-title" placeholder="일기 제목을 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="diary-content">내용</label>
+                        <textarea id="diary-content" rows="10" placeholder="파닥몬과의 추억을 기록해보세요..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="diary-date">날짜</label>
+                        <input type="date" id="diary-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="diary-image">파닥몬 사진</label>
+                        <input type="file" id="diary-image" accept="image/*">
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">저장하기</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 보기 화면: 선택한 일기 상세 보기 -->
+        <section id="view-section" class="section">
+            <div class="container">
+                <h2>일기 보기</h2>
+                <div id="diary-view">
+                    <p class="empty-message">목록에서 일기를 선택해주세요.</p>
+                </div>
+                <button id="back-btn" class="back-btn">목록으로 돌아가기</button>
+            </div>
+        </section>
+
+        <!-- 목록 화면: 저장된 일기 목록 -->
+        <section id="list-section" class="section">
+            <div class="container">
+                <h2>일기 목록</h2>
+                <div id="diary-list">
+                    <p class="empty-message">저장된 일기가 없습니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 파닥몬의 사진첩</p>
+    </footer>
+
+    <script src="3.js"></script>
+</body>
+</html>
+
